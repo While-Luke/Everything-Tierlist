@@ -38,7 +38,11 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   align-items: flex-start;
-  touch-action: none;
+  touch-action: pan-y;
+}
+
+.tier-unranked .tier-content {
+  min-height: 50px;
 }
 
 .word-card {
@@ -47,6 +51,7 @@ body {
   padding: 8px 12px;
   border-radius: 6px;
   cursor: grab;
+  touch-action: none;
 }
 
 .tier-S .tier-label {
@@ -111,6 +116,13 @@ body {
 
 .load-more-button:hover {
   transform: scale(1.05);
+}
+
+.tier-footer {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .export-btn {

@@ -5,20 +5,17 @@ export default function WordCard({
 }: {
   word: string;
 }) {
-  const { attributes, listeners, setNodeRef, transform } =
+  const { attributes, listeners, setNodeRef, transform, isDragging } =
     useDraggable({
       id: word,
     });
 
-  const style = transform
-    ? {
-        transform: `translate3d(
-          ${transform.x}px,
-          ${transform.y}px,
-          0
-        )`,
-      }
-    : undefined;
+  const style = {
+    opacity: isDragging ? 0 : 1,
+    transform: transform
+      ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
+      : undefined,
+  };
 
   return (
     <div
