@@ -64,7 +64,7 @@ export default function App() {
 
   const usedWords = useMemo(() => new Set(Object.values(tiers).flat()), [tiers]);
   const hasMoreWords = usedWords.size < WORDS.length;
-  const showLoadMoreButton = tiers.unranked.length === 0 && !loadingMore;
+  const showLoadMoreButton = tiers.unranked.length === 0 && !loadingMore && !exporting;
 
   useEffect(() => {
     const initialWords = getRandomWords(BATCH_SIZE, new Set());
